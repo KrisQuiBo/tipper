@@ -1,0 +1,232 @@
+/* Tipper */
+
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
+
+/* colors */
+  /* RGB */
+$color1: rgba(253, 255, 252, 1);
+$color2: lime;
+$color3: rgba(114, 134, 160, 1);
+$color4: #2f83d3;
+$color5: rgba(249, 217, 84, 1);
+$color6: #87bef4;
+
+
+/* fonts */
+$lato: 'Lato', sans-serif;
+$garamond: 'EB Garamond', serif;
+$oxygen: 'Oxygen', sans-serif;
+
+$max-width: 2680px;
+$media-break-tab: 769px;
+$media-break-desk: 1024px;
+
+/*maps*/
+$breakpoints: (
+  'sm': 320px,
+ 'med': 768px,
+  'lg': 992px,
+  'xl': 2680px
+  );
+  /* mixins */
+  @mixin flex-it (
+    $disp: flex,
+    $align: null,
+    $dir: null,
+    $wrap: null,
+    $just: null,
+    $basis: null,
+    $flex: null) {
+      display: $disp ;
+      flex-direction: $dir;
+      flex-wrap: $wrap;
+      justify-content: $just;
+      flex-basis: $basis;
+      flex-grow: $flex;
+      align-items: $align;
+      // margin: 5px;
+      text-align: center;
+      @content;
+  }
+
+  @mixin center($w) {
+    width: $w;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @mixin media($size) {
+        @media (min-width: $media-break) {
+            @content;
+          }
+    }
+
+    /*-----
+      ----- Global styles ----
+                          -----*/
+    * {
+      box-sizing: border-box;
+      font-family: $oxygen;
+      color: $color4;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      position: relative;
+      margin: 0 auto;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $color1;
+      &:hover {
+        color: $color2;
+      }
+    }
+
+    h2{
+      @include center(80%);
+      grid-column: 2/3;
+    }
+
+    main {
+      color: #555;
+    }
+    a {
+      text-align: center;
+    }
+
+    /*----
+        ----  the Form  -----
+                              ----*/
+    .formParent {
+      @include center(90%);
+      margin-top:2rem;
+      @media (min-width: $media-break-tab) {
+        @include flex-it($dir: column);
+      }
+      @media (min-width: $media-break-desk) {
+        @include center(35%);
+      }
+    }
+    legend {
+      text-transform: uppercase;
+      font-weight: 800;
+      text-align: right;
+      letter-spacing: .3vw;
+      font-family: $oxygen;
+      padding: 10px;
+      border-radius: .5rem;
+      background: $color1;
+      border: .5rem solid $color2;
+    }
+    .theInputs {
+      // background: $color4;
+      border-radius: 1rem;
+      color: $color1;
+      align-items: start;
+      display: flex;
+      flex-direction: column;
+    }
+    fieldset {
+      padding: 1rem;
+      border: 1rem solid $color4;
+      border-radius: 2rem;
+    }
+    label {
+      margin-right: 1rem;
+    }
+    .cost, .service, .people {
+      position: relative;
+      padding: 2rem;
+      border-radius: 20px;
+      border: .25rem solid;
+      width: 30vw;
+    }
+    .cost {
+      border-color: fuchsia;
+    }
+    .service {
+      border-color: tomato;
+    }
+    .people {
+      border-color: lime;
+    }
+    select{
+      width: 30%
+    }
+    .cost, .people, .service {
+      margin: 2rem;
+    }
+
+    .currencyinput {
+        border: 1px inset #ccc;
+    }
+    .currencyinput input {
+        border: 0;
+    }
+    #numbGuests {
+      width: 3vw;
+    }
+    input::placeholder {
+      opacity: 0.8;
+      font-size: .9em;
+      color: #868686;
+      font-style: italic;
+    }
+    input:focus {
+      outline: none;
+      background: lighten($color2, 20);
+    }
+    .tipAmount {
+      background-color: $color4;
+      color: #fff;
+      text-align: center;
+    }
+    button {
+  	// background: $color2;
+    // background-image: linear-gradient(-40deg, $color1, $color2, $color1);
+    margin: 2rem;
+  	border: .5rem solid $color4;
+    padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 5.5rem;
+  width: 30vw;
+    }
+
+
+    /*-----
+      ----- FavIcons ----
+                          -----*/
+
+    .fa {
+      font-size: 7rem;
+      opacity: .9;
+      position: absolute;
+      top: -15%;
+      left: -11%;
+      &-dollar-sign {
+        @extend .fa;
+        transform: rotate(15deg);
+        color: fuchsia;
+      }
+      &-heart {
+        @extend .fa;
+        transform: rotate(-15deg);
+        color: tomato;
+      }
+      &-divide {
+        @extend .fa;
+        transform: rotate(15deg);
+        color: lime;
+      }
+    }

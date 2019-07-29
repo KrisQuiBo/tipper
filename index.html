@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Tipper</title>
+
+<script src="https://kit.fontawesome.com/2fda3b5aaa.js"></script>
+  </head>
+  <body id="body">
+    <form class="formParent" action="index.html" method="post">
+      <fieldset>
+        <legend>Tipp'erOrTipp'em!</legend>
+        <div class="theInputs">
+          <div class="cost">
+            <i class="fas fa-dollar-sign"></i>
+            <label for="cost">Meal total?</label>
+            <span class="currencyinput">$<input type="number" step="0.01" name="cost" id="cost" placeholder="How much was your meal?" required></span>
+            <!-- <input type="text" name="cost" id="cost" value="" placeholder="$"> -->
+          </div>
+          <div class="service"><i class="far fa-heart"></i>
+            <label for="service">How was the service?</label>
+            <select name="service" id = "service">
+                  <option value="">How was it?</option>
+                  <option value=.1>My server doesn't like his/her job. (10%)</option>
+                  <option value=".12">My server was having a bad day. (12%)</option>
+                  <option value=".15">My server got it all right! (15%)</option>
+                  <option value=".20">My server enhanced my overall meal experience! (20%)</option>
+                  <option value=".25">My server went above and beyond! (25%)</option>
+            </select>
+            </div>
+            <div class="people">
+              <label for="people">How many are splitting the check?</label><i class="fas fa-divide"></i>
+              <input type="text" name="people" value="" id="numbGuests">
+            </div>
+          </div>
+          <button type="button" name="button" class="calculate">Calculate</button>
+          <div class="tipAmount">
+            <p id="perPerson">Per person</p>
+          </div>
+      </fieldset>
+
+    </form>
+
+
+
+    <script type="text/javascript" src="javascript/app.js">
+    </script>
+
+  </body>
+</html>

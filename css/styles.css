@@ -1,0 +1,205 @@
+/* Tipper */
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond");
+@import url("https://fonts.googleapis.com/css?family=Oxygen&display=swap");
+/* colors */
+/* RGB */
+/* fonts */
+/*maps*/
+/* mixins */
+/*-----
+  ----- Global styles ----
+                      -----*/
+* {
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+  color: #2f83d3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fdfffc;
+}
+a:hover {
+  color: lime;
+}
+
+h2 {
+  width: 80%;
+  max-width: 2680px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 2/3;
+}
+
+main {
+  color: #555;
+}
+
+a {
+  text-align: center;
+}
+
+/*----
+    ----  the Form  -----
+                          ----*/
+.formParent {
+  width: 90%;
+  max-width: 2680px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+@media (min-width: 769px) {
+  .formParent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  .formParent {
+    width: 35%;
+    max-width: 2680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+legend {
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: right;
+  letter-spacing: 0.3vw;
+  font-family: "Oxygen", sans-serif;
+  padding: 10px;
+  border-radius: 0.5rem;
+  background: #fdfffc;
+  border: 0.5rem solid lime;
+}
+
+.theInputs {
+  border-radius: 1rem;
+  color: #fdfffc;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  padding: 1rem;
+  border: 1rem solid #2f83d3;
+  border-radius: 2rem;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+.cost, .service, .people {
+  position: relative;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 0.25rem solid;
+  width: 30vw;
+}
+
+.cost {
+  border-color: fuchsia;
+}
+
+.service {
+  border-color: tomato;
+}
+
+.people {
+  border-color: lime;
+}
+
+select {
+  width: 30%;
+}
+
+.cost, .people, .service {
+  margin: 2rem;
+}
+
+.currencyinput {
+  border: 1px inset #ccc;
+}
+
+.currencyinput input {
+  border: 0;
+}
+
+#numbGuests {
+  width: 3vw;
+}
+
+input::placeholder {
+  opacity: 0.8;
+  font-size: 0.9em;
+  color: #868686;
+  font-style: italic;
+}
+
+input:focus {
+  outline: none;
+  background: #66ff66;
+}
+
+.tipAmount {
+  background-color: #2f83d3;
+  color: #fff;
+  text-align: center;
+}
+
+button {
+  margin: 2rem;
+  border: 0.5rem solid #2f83d3;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 5.5rem;
+  width: 30vw;
+}
+
+/*-----
+  ----- FavIcons ----
+                      -----*/
+.fa, .fa-divide, .fa-heart, .fa-dollar-sign {
+  font-size: 7rem;
+  opacity: 0.9;
+  position: absolute;
+  top: -15%;
+  left: -11%;
+}
+.fa-dollar-sign {
+  transform: rotate(15deg);
+  color: fuchsia;
+}
+.fa-heart {
+  transform: rotate(-15deg);
+  color: tomato;
+}
+.fa-divide {
+  transform: rotate(15deg);
+  color: lime;
+}
+
+/*# sourceMappingURL=styles.css.map */
