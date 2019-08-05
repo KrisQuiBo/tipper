@@ -110,7 +110,7 @@ $breakpoints: (
       height: 90vh;
       overflow: visible;
       @include center(90%);
-      margin-top:2rem;
+      margin-top: 1.3rem;
       @media (min-width: $media-break-tab) {
         @include flex-it($dir: column);
           @include center(60%);
@@ -180,7 +180,7 @@ $breakpoints: (
       width: 30%
     }
     .cost, .people, .service {
-      margin: 2rem;
+      margin: .7rem;
     }
 
     .currencyinput {
@@ -206,7 +206,7 @@ $breakpoints: (
     button {
   	// background: $color2;
     // background-image: linear-gradient(-40deg, $color1, $color2, $color1);
-    margin: 2rem;
+    margin: .7rem;
   	border: .5rem solid $color4;
     padding: 1rem;
     border-radius: 20px;
@@ -230,7 +230,7 @@ $breakpoints: (
   button#clear {
   // background: $color2;
   // background-image: linear-gradient(-40deg, $color1, $color2, $color1);
-  margin: 2rem;
+  margin: .7rem;
   border: .5rem solid $color4;
   padding: 1rem;
   border-radius: 20px;

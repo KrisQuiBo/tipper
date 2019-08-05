@@ -63,7 +63,7 @@ a {
   max-width: 2680px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2rem;
+  margin-top: 1.3rem;
 }
 @media (min-width: 769px) {
   .formParent {
@@ -159,7 +159,7 @@ select {
 }
 
 .cost, .people, .service {
-  margin: 2rem;
+  margin: 0.7rem;
 }
 
 .currencyinput {
@@ -186,7 +186,7 @@ input:focus {
 }
 
 button {
-  margin: 2rem;
+  margin: 0.7rem;
   border: 0.5rem solid #2f83d3;
   padding: 1rem;
   border-radius: 20px;
@@ -211,7 +211,7 @@ button:hover {
 }
 
 button#clear {
-  margin: 2rem;
+  margin: 0.7rem;
   border: 0.5rem solid #2f83d3;
   padding: 1rem;
   border-radius: 20px;
