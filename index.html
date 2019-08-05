@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="css/styles.css">
     <title>Tipper</title>
 
@@ -10,7 +11,7 @@
   <body id="body">
     <form class="formParent" action="index.html" method="post">
       <fieldset>
-        <legend>Tipp'erOrTipp'em!</legend>
+        <legend>Tip-Tip Hooray!</legend>
         <div class="theInputs">
           <div class="cost">
             <i class="fas fa-dollar-sign"></i>
@@ -33,11 +34,15 @@
               <label for="people">How many are splitting the check?</label><i class="fas fa-divide"></i>
               <input type="text" name="people" value="" id="numbGuests">
             </div>
+              <button type="button" name="button" class="calculate">Calculate</button>
+              <div class="tipAmount hide">
+                <i class="fas fa-equals"></i>
+                <!-- <p id="perPerson">Per person</p> -->
+              </div>
+                <button type="button" name="button" id="clear" class="calculate">Clear</button>
           </div>
-          <button type="button" name="button" class="calculate">Calculate</button>
-          <div class="tipAmount">
-            <p id="perPerson">Per person</p>
-          </div>
+
+
       </fieldset>
 
     </form>

@@ -1,28 +1,19 @@
 const formParent = document.querySelector(".formParent");
 const tipAmount = document.querySelector(".tipAmount");
-
 let numbGuests = document.getElementById("numbGuests").value;
 const calculate = document.querySelector(".calculate");
-let body = document.getElementById('body');
-let coord = document.getElementById("coord");
+let currencyinput = document.querySelector('currencyinput');
+const clear = document.getElementById('clear');
 
-localStorage.setItem('name', 'kristen');
-let names;
-
-if(names === null) {
-  names = [];
-}
-
-
+calculate.addEventListener('click', calculateAmount);
+clear.addEventListener('click', removeResult);
+// window.setTimeout(removeResult, 5000);
 
 
 function calculateAmount(o) {
-  const cost = document.getElementById("cost").value;
-  // let mealCost = parseInt(cost.value);
+let cost = document.getElementById("cost").value;
   const service = document.getElementById("service").value;
-  // let gratuity = service.value;
   let people = document.getElementById("numbGuests").value;
-  const perPerson = document.getElementById("perPerson");
 
   //form validations
   if (cost === "" || service ===null ) {
@@ -31,17 +22,28 @@ function calculateAmount(o) {
 
   if (people === "" || people <=1) {
     people = 1;
-    perPerson.style.display = "none";
-  } else {
-    perPerson.style.display = "block";
   }
 
   let amount = ((cost * service)/people);
    amount = Math.round(amount * 100) / 100;
    amount = amount.toFixed(2);
 
-tipAmount.innerHTML = amount;
-console.log(o.clientY);
+   const theTip = document.createElement('p');
+   theTip.innerHTML = `$${amount} per person`;
+   tipAmount.appendChild(theTip);
+
+   tipAmount.classList.toggle('hide');
+
+
+   formParent.reset();
+
+
+}
+
+function removeResult(e) {
+
+  tipAmount.innerHTML = '';
+  tipAmount.classList.toggle('hide');
 }
 
 
@@ -52,5 +54,4 @@ return gratuity;
    console.log(gratuity);
 }
 
-calculate.addEventListener('click', calculateAmount);
-document.getElementById("perPerson").style.display = "none";
+// document.getElementById("perPerson").style.display = "none";

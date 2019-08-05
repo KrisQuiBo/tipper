@@ -6,7 +6,7 @@
 /* colors */
   /* RGB */
 $color1: rgba(253, 255, 252, 1);
-$color2: lime;
+$color2: lightgreen;
 $color3: rgba(114, 134, 160, 1);
 $color4: #2f83d3;
 $color5: rgba(249, 217, 84, 1);
@@ -69,7 +69,7 @@ $breakpoints: (
     * {
       box-sizing: border-box;
       font-family: $oxygen;
-      color: $color4;
+      // color: $color4;
     }
     html {
       scroll-behavior: smooth;
@@ -107,13 +107,16 @@ $breakpoints: (
         ----  the Form  -----
                               ----*/
     .formParent {
+      height: 90vh;
+      overflow: visible;
       @include center(90%);
       margin-top:2rem;
       @media (min-width: $media-break-tab) {
         @include flex-it($dir: column);
+          @include center(60%);
       }
       @media (min-width: $media-break-desk) {
-        @include center(35%);
+        @include center(50%);
       }
     }
     legend {
@@ -131,9 +134,7 @@ $breakpoints: (
       // background: $color4;
       border-radius: 1rem;
       color: $color1;
-      align-items: start;
-      display: flex;
-      flex-direction: column;
+      @include flex-it($dir: column, $align:center)
     }
     fieldset {
       padding: 1rem;
@@ -142,22 +143,38 @@ $breakpoints: (
     }
     label {
       margin-right: 1rem;
+      font-size: 1.2rem;
     }
-    .cost, .service, .people {
+    .cost, .service, .people, .tipAmount {
+      color: white;
       position: relative;
       padding: 2rem;
       border-radius: 20px;
-      border: .25rem solid;
-      width: 30vw;
+      border: .7rem solid;
+      width: 65vw;
+        @media (min-width: $media-break-tab) {
+      width: 40vw;
+      }
     }
     .cost {
-      border-color: fuchsia;
+      border-color: $color2;
+      background-color: $color2;
     }
     .service {
       border-color: tomato;
+      background-color: tomato;
     }
     .people {
-      border-color: lime;
+      border-color: violet;
+      background-color: violet;
+    }
+    .tipAmount {
+      background-color: $color4;
+      color: #fff;
+      text-align: center;
+      // width: inherit;
+      margin-left: auto;
+      margin-right: auto;
     }
     select{
       width: 30%
@@ -183,25 +200,60 @@ $breakpoints: (
     }
     input:focus {
       outline: none;
-      background: lighten($color2, 20);
+      // background: lighten($color2, 45);
     }
-    .tipAmount {
-      background-color: $color4;
-      color: #fff;
-      text-align: center;
-    }
+
     button {
   	// background: $color2;
     // background-image: linear-gradient(-40deg, $color1, $color2, $color1);
     margin: 2rem;
   	border: .5rem solid $color4;
     padding: 1rem;
+    border-radius: 20px;
+    background-color: $color4;
+    color: white;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 3.5rem;
+    width: 65vw;
+    @media(min-width: $media-break-tab) {
+    width: 40vw;
+    }
+  }
+  button:hover {
+    color: white;
+    background-color: #63aef7;
+    border-color: lighten($color4, 20);
+    transition: background-color .2s ease-in;
+  }
+
+  button#clear {
+  // background: $color2;
+  // background-image: linear-gradient(-40deg, $color1, $color2, $color1);
+  margin: 2rem;
+  border: .5rem solid $color4;
+  padding: 1rem;
   border-radius: 20px;
+  background-color: white;
+  color: $color4;
   cursor: pointer;
   outline: inherit;
-  font-size: 5.5rem;
-  width: 30vw;
-    }
+  font-size: 3.5rem;
+  width: 65vw;
+  @media(min-width: $media-break-tab) {
+  width: 40vw;
+  }
+}
+button#clear:hover {
+  color: #63aef7;
+  background-color: white;
+  border-color: lighten($color4, 20);
+  transition: background-color .2s ease-in;
+}
+
+  .hide {
+    display: none;
+  }
 
 
     /*-----
@@ -209,24 +261,30 @@ $breakpoints: (
                           -----*/
 
     .fa {
-      font-size: 7rem;
-      opacity: .9;
-      position: absolute;
-      top: -15%;
-      left: -11%;
+      font-size: 5rem;
+          opacity: .3;
+          position: absolute;
+          top: 3%;
+          left: 2%;
       &-dollar-sign {
         @extend .fa;
         transform: rotate(15deg);
-        color: fuchsia;
+        color: #66a766;
       }
       &-heart {
         @extend .fa;
         transform: rotate(-15deg);
-        color: tomato;
+        color: #c5381f;;
       }
       &-divide {
         @extend .fa;
         transform: rotate(15deg);
-        color: lime;
+        color: #944e94;
+      }
+      &-equals {
+        @extend .fa;
+        font-size: 4rem;
+        transform: rotate(-20deg);
+        color: blueviolet;
       }
     }

@@ -12,7 +12,6 @@
 * {
   box-sizing: border-box;
   font-family: "Oxygen", sans-serif;
-  color: #2f83d3;
 }
 
 html {
@@ -35,7 +34,7 @@ a {
   color: #fdfffc;
 }
 a:hover {
-  color: lime;
+  color: lightgreen;
 }
 
 h2 {
@@ -58,6 +57,8 @@ a {
     ----  the Form  -----
                           ----*/
 .formParent {
+  height: 90vh;
+  overflow: visible;
   width: 90%;
   max-width: 2680px;
   margin-left: auto;
@@ -69,11 +70,15 @@ a {
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 60%;
+    max-width: 2680px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (min-width: 1024px) {
   .formParent {
-    width: 35%;
+    width: 50%;
     max-width: 2680px;
     margin-left: auto;
     margin-right: auto;
@@ -89,15 +94,16 @@ legend {
   padding: 10px;
   border-radius: 0.5rem;
   background: #fdfffc;
-  border: 0.5rem solid lime;
+  border: 0.5rem solid lightgreen;
 }
 
 .theInputs {
   border-radius: 1rem;
   color: #fdfffc;
-  align-items: start;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 fieldset {
@@ -108,26 +114,44 @@ fieldset {
 
 label {
   margin-right: 1rem;
+  font-size: 1.2rem;
 }
 
-.cost, .service, .people {
+.cost, .service, .people, .tipAmount {
+  color: white;
   position: relative;
   padding: 2rem;
   border-radius: 20px;
-  border: 0.25rem solid;
-  width: 30vw;
+  border: 0.7rem solid;
+  width: 65vw;
+}
+@media (min-width: 769px) {
+  .cost, .service, .people, .tipAmount {
+    width: 40vw;
+  }
 }
 
 .cost {
-  border-color: fuchsia;
+  border-color: lightgreen;
+  background-color: lightgreen;
 }
 
 .service {
   border-color: tomato;
+  background-color: tomato;
 }
 
 .people {
-  border-color: lime;
+  border-color: violet;
+  background-color: violet;
+}
+
+.tipAmount {
+  background-color: #2f83d3;
+  color: #fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 select {
@@ -159,13 +183,6 @@ input::placeholder {
 
 input:focus {
   outline: none;
-  background: #66ff66;
-}
-
-.tipAmount {
-  background-color: #2f83d3;
-  color: #fff;
-  text-align: center;
 }
 
 button {
@@ -173,33 +190,81 @@ button {
   border: 0.5rem solid #2f83d3;
   padding: 1rem;
   border-radius: 20px;
+  background-color: #2f83d3;
+  color: white;
   cursor: pointer;
   outline: inherit;
-  font-size: 5.5rem;
-  width: 30vw;
+  font-size: 3.5rem;
+  width: 65vw;
+}
+@media (min-width: 769px) {
+  button {
+    width: 40vw;
+  }
+}
+
+button:hover {
+  color: white;
+  background-color: #63aef7;
+  border-color: #83b5e5;
+  transition: background-color 0.2s ease-in;
+}
+
+button#clear {
+  margin: 2rem;
+  border: 0.5rem solid #2f83d3;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: white;
+  color: #2f83d3;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 3.5rem;
+  width: 65vw;
+}
+@media (min-width: 769px) {
+  button#clear {
+    width: 40vw;
+  }
+}
+
+button#clear:hover {
+  color: #63aef7;
+  background-color: white;
+  border-color: #83b5e5;
+  transition: background-color 0.2s ease-in;
+}
+
+.hide {
+  display: none;
 }
 
 /*-----
   ----- FavIcons ----
                       -----*/
-.fa, .fa-divide, .fa-heart, .fa-dollar-sign {
-  font-size: 7rem;
-  opacity: 0.9;
+.fa, .fa-equals, .fa-divide, .fa-heart, .fa-dollar-sign {
+  font-size: 5rem;
+  opacity: 0.3;
   position: absolute;
-  top: -15%;
-  left: -11%;
+  top: 3%;
+  left: 2%;
 }
 .fa-dollar-sign {
   transform: rotate(15deg);
-  color: fuchsia;
+  color: #66a766;
 }
 .fa-heart {
   transform: rotate(-15deg);
-  color: tomato;
+  color: #c5381f;
 }
 .fa-divide {
   transform: rotate(15deg);
-  color: lime;
+  color: #944e94;
+}
+.fa-equals {
+  font-size: 4rem;
+  transform: rotate(-20deg);
+  color: blueviolet;
 }
 
 /*# sourceMappingURL=styles.css.map */
